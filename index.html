@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0">
+    <!-- 引入 Font Awesome 图标库，可根据实际情况替换为本地文件或其他 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap">
+    <title>公益托管报名系统</title>
+    <style>
+        *{
+            /*去掉所有元素内外边面*/
+            /*去掉所有元素内外边面*/
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+         .title1{
+            /*w,vh是可视宽高百分比，它们的最大值是1g阳*/
+            width:100vw;
+            height:10vh;
+            background: #369;
+            /*确保容器的最小高度为 60px，避免在小屏幕上高度过小。*/
+            min-height: 60px;
+            color:#ffffff;
+            /*水平垂直居中*/
+            text-align:center;
+            line-height:10vh;
+             font-size: 12pt;
+             /*display: flex;*/
+             /*align-items: center;*/
+             /*justify-content: center;*/
+        }
+        /* 图片容器样式，让图片自适应 */
+        .notice {
+            width: 100%;
+        }
+
+        .notice img {
+            width: 100%;
+            display: block;
+        }
+        /* 按钮导航栏样式，使用弹性布局 */
+        /*.nav {*/
+        /*    display: flex;*/
+        /*    flex-wrap: wrap;*/
+        /*    justify-content: space-around;*/
+        /*    padding: 10px;*/
+        /*    background-color: #f5f5f5;*/
+        /*}*/
+
+        /*.nav a {*/
+        /*    display: inline-block;*/
+        /*    background-color: #7CCD7C;*/
+        /*    color: #fff;*/
+        /*    text-decoration: none;*/
+        /*    padding: 10px 20px;*/
+        /*    margin: 5px;*/
+        /*    border-radius: 5px;*/
+        /*    font-size: 15px;*/
+        /*}*/
+
+        /*.nav a:hover {*/
+        /*    background-color: #57a557;*/
+        /*}*/
+        .nav {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 0px 20px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            /*min-width: 150px;*/
+            /*max-width: 200px;*/
+            height: 60px;
+            /*margin: 4px 0; !* 在按钮上下各添加8像素的外边距 *!*/
+        }
+
+        /* 给不同按钮设置不同颜色，可按需调整 */
+        .nav a:nth-child(1) {
+            background-color: #ff6347;
+            font-size: 15px;
+        }
+
+        .nav a:nth-child(2) {
+            background-color: #40e0d0;
+            font-size: 15px;
+        }
+
+        .nav a:nth-child(3) {
+            background-color: #ffa500;
+            font-size: 15px;
+        }
+
+        .nav a:nth-child(4) {
+            background-color: #9370db;
+        }
+
+        /* 最后两个按钮加大 */
+        .nav a:nth-child(4) {
+            /*padding: 14px 24px;*/
+            /*margin-left: 2%;*/
+            font-size: 20px;
+        }
+        .nav a:nth-child(5) {
+            /*padding: 14px 24px;*/
+            font-size: 19px;
+        }
+
+        .nav a:nth-child(4) {
+            background-color: #32cd32;
+        }
+
+        .nav a:nth-child(5) {
+            background-color: #1e90ff;
+        }
+        /*.nav a:nth-child(6) {*/
+        /*    padding: 14px 24px;*/
+        /*    font-size: 15px;*/
+        /*}*/
+        /*.nav a:nth-child(6) {*/
+        /*    background-color: #369;*/
+        /*}*/
+
+        .nav a:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+        /* 底部历届托管班图片容器样式 */
+        .bottom-img {
+            width: 100%;
+            margin-top: 10px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .bottom-img img {
+            width: 100%;
+            display: block;
+            height: 380px;
+            object-fit: cover; /* 确保图片填充整个区域，同时保持宽高比例 */
+        }
+
+        /*!* 响应式设计 - 平板 *!*/
+        /*@media (max-width: 992px) {*/
+        /*    .nav a {*/
+        /*        min-width: 130px;*/
+        /*        padding: 12px 10px;*/
+        /*        font-size: 0.95rem;*/
+        /*    }*/
+
+        /*    .nav a i {*/
+        /*        font-size: 1.5rem;*/
+        /*    }*/
+
+        /*    .bottom-img img {*/
+        /*        height: 300px;*/
+        /*    }*/
+        /*}*/
+
+        /*!* 响应式设计 - 手机 *!*/
+        /*@media (max-width: 768px) {*/
+        /*    .title1 {*/
+        /*        font-size: 1.1rem;*/
+        /*        height: 8vh;*/
+        /*        min-height: 50px;*/
+        /*    }*/
+
+        /*    .nav {*/
+        /*        gap: 10px;*/
+        /*    }*/
+
+        /*    .nav a {*/
+        /*        min-width: calc(50% - 15px);*/
+        /*        max-width: calc(50% - 15px);*/
+        /*        padding: 12px 8px;*/
+        /*        font-size: 0.9rem;*/
+        /*        min-height: 70px;*/
+        /*    }*/
+
+        /*    .nav a i {*/
+        /*        font-size: 1.4rem;*/
+        /*        margin-right: 8px;*/
+        /*    }*/
+
+        /*    .bottom-img img {*/
+        /*        height: 250px;*/
+        /*    }*/
+        /*}*/
+
+        /*!* 响应式设计 - 小屏手机 *!*/
+        /*@media (max-width: 480px) {*/
+        /*    .title1 {*/
+        /*        font-size: 1rem;*/
+        /*        padding: 0 10px;*/
+        /*        line-height: 1.4;*/
+        /*    }*/
+
+        /*    .nav {*/
+        /*        flex-direction: column;*/
+        /*        gap: 8px;*/
+        /*        padding: 10px;*/
+        /*    }*/
+
+        /*    .nav a {*/
+        /*        min-width: 100%;*/
+        /*        max-width: 100%;*/
+        /*        padding: 15px 10px;*/
+        /*        font-size: 1rem;*/
+        /*        min-height: 70px;*/
+        /*        justify-content: flex-start;*/
+        /*        text-align: left;*/
+        /*    }*/
+
+        /*    .nav a i {*/
+        /*        font-size: 1.5rem;*/
+        /*        margin-right: 15px;*/
+        /*        margin-left: 10px;*/
+        /*    }*/
+
+        /*    .bottom-img img {*/
+        /*        height: 200px;*/
+        /*    }*/
+
+        /*    .footer {*/
+        /*        font-size: 0.8rem;*/
+        /*        padding: 15px 10px;*/
+        /*    }*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="title1">青岛市总工会“妈妈小屋”公益托管报名系统</div>
+    <div class="content">
+        <div class="notice">
+            <img src="/tuoguanceshi/static/image/tongzhitudaizi.png" alt="通知" onclick="toNotice()">
+        </div>
+        <!-- 导航按钮部分 -->
+        <div class="nav">
+<!--            <a href="#">小屋地图</a>-->
+            <a href="#"><i class="fa-solid fa-book"></i>课程介绍</a>
+            <a href="#"><i class="fa-solid fa-heart"></i>公益活动</a>
+            <a href="#"><i class="fa-solid fa-headset"></i>心理热线</a>
+            <a href="https://www.wjx.cn/vm/rGt9B44.aspx"><i class="fa-solid fa-hand-holding-heart"></i>志愿者报名&ensp;&ensp;</a>
+            <a href="https://www.wjx.cn/vm/h55XZyi.aspx"><i class="fa-solid fa-user-group"></i>公益托管报名</a>
+<!--            <a href="#">历届公益托管班</a>-->
+        </div>
+        <!-- 底部历届托管班图片 -->
+        <div class="bottom-img">
+            <img src="/tuoguanceshi/static/image/xiatupian.jpg" alt="历届托管班图片" onclick="toPhotoWall()">
+        </div>
+    </div>
+    <script>
+        function toNotice() {
+            //跳转链接待定
+            window.location.href = "http://localhost:63342/tuoguan/tuoguan/view/notice.html?_ijt=5eoi86dt4958s7tul4163s0j3l&_ij_reload=RELOAD_ON_SAVE";
+        }
+    </script>
+</body>
+</html>
