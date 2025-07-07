@@ -246,13 +246,15 @@
     <div class="title1">青岛市总工会“妈妈小屋”公益托管报名系统</div>
     <div class="content">
         <div class="notice">
+            <!-- 部署到GitHub上用的图片链接地址 -->
             <img src="/tuoguanceshi/static/image/tongzhitudaizi.png" alt="通知" onclick="toNotice()">
+<!--            <img src="static/image/tongzhitudaizi.png" alt="通知" onclick="toNotice()">-->
         </div>
         <!-- 导航按钮部分 -->
         <div class="nav">
 <!--            <a href="#">小屋地图</a>-->
-            <a href="#"><i class="fa-solid fa-book"></i>课程介绍</a>
-            <a href="#"><i class="fa-solid fa-heart"></i>公益活动</a>
+            <a href="#" onclick="toIntroduce()"><i class="fa-solid fa-book"></i>课程介绍</a>
+            <a href="https://mp.weixin.qq.com/s/hocNFgIGqiKi7sK6NwEE3g"><i class="fa-solid fa-heart"></i>公益活动</a>
             <a href="#"><i class="fa-solid fa-headset"></i>心理热线</a>
             <a href="https://www.wjx.cn/vm/rGt9B44.aspx"><i class="fa-solid fa-hand-holding-heart"></i>志愿者报名&ensp;&ensp;</a>
             <a href="https://www.wjx.cn/vm/h55XZyi.aspx"><i class="fa-solid fa-user-group"></i>公益托管报名</a>
@@ -260,13 +262,21 @@
         </div>
         <!-- 底部历届托管班图片 -->
         <div class="bottom-img">
+            <!-- 部署到GitHub上用的图片链接地址 -->
             <img src="/tuoguanceshi/static/image/xiatupian.jpg" alt="历届托管班图片" onclick="toPhotoWall()">
+            <!-- 本地用的图片链接地址           -->
+<!--            <img src="static/image/xiatupian.jpg" alt="历届托管班图片" onclick="toPhotoWall()">-->
         </div>
     </div>
     <script>
         function toNotice() {
             //跳转链接待定
-            window.location.href = "http://localhost:63342/tuoguan/tuoguan/view/notice.html?_ijt=5eoi86dt4958s7tul4163s0j3l&_ij_reload=RELOAD_ON_SAVE";
+            window.location.href = "tuoguan/view/notice.html?_ijt=5eoi86dt4958s7tul4163s0j3l&_ij_reload=RELOAD_ON_SAVE";
+        }
+
+        function toIntroduce() {
+            //跳转链接待定
+            window.location.href = "tuoguan/view/introduce.html?_ijt=5eoi86dt4958s7tul4163s0j3l&_ij_reload=RELOAD_ON_SAVE";
         }
     </script>
 </body>
