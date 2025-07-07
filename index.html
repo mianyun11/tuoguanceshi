@@ -89,6 +89,15 @@
             /*margin: 4px 0; !* 在按钮上下各添加8像素的外边距 *!*/
         }
 
+        /* 第一行三个按钮，每个约33.33%宽度 */
+        .nav a:nth-child(-n+3) {
+            flex: 1 1 calc((100% - 20px) / 3);
+        }
+
+        /* 第二行两个按钮，每个约50%宽度 */
+        .nav a:nth-child(n+4) {
+            flex: 1 1 calc((100% - 10px) / 2);
+        }
         /* 给不同按钮设置不同颜色，可按需调整 */
         .nav a:nth-child(1) {
             background-color: #ff6347;
@@ -117,7 +126,7 @@
         }
         .nav a:nth-child(5) {
             /*padding: 14px 24px;*/
-            font-size: 19px;
+            font-size: 20px;
         }
 
         .nav a:nth-child(4) {
